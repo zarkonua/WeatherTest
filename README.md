@@ -5,6 +5,10 @@ This project is your standard Maven Java project with `src` folders and `POM.xml
 `src/main/java/api.models` represent API entities with class properties equal to JSON response fields. This lets us serialize and deserialize  requests and responses easily.
 In order for the serialization to work properly, names of the fields must match JSON convention thus they violate Java camel case convention (it can be overriden using `@JsonProperty` annotations in real-life projects).
 
+### Pages
+`src/main/java/pages/PageBase.class` is the Page superclass for configuration and common code
+`src/main/java/pages` represent Page Object Pattern entities.
+
 ### Properties
 `src/test/resources/config.properties` is a simple properties file to store various configurations
 
