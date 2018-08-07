@@ -11,3 +11,6 @@ In order for the serialization to work properly, names of the fields must match 
 ### Tests
 `src/main/java/TestBase.class` is the tests superclass for configuration and common code
 `src/test/java/` holds test classes (JUnit4) 
+
+### Test Run
+`mvn clean install` - is console command to build and start Test run.
