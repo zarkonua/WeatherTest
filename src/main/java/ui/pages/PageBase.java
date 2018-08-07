@@ -9,20 +9,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class ParentPage {
+public class PageBase {
 
     WebDriver driver;
     private WebDriverWait wait;
 
-    public ParentPage() {
-        driver = new ChromeDriver();
+    public PageBase(WebDriver driver) {
+        this.driver = driver;
         wait = new WebDriverWait(driver, 30);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
-
-    public ParentPage(WebDriver driver) {
-        this.driver = driver;
     }
 
     protected void open(String url) {

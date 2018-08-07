@@ -1,20 +1,21 @@
 package ui.steps;
 
-import ui.pages.Forecast;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
 import ui.pages.Home;
 
 public class HomeSteps {
 
-    private static Home home = new Home();
+    private Home home;
 
-    public Forecast setLocation(String location) {
+    public HomeSteps(WebDriver driver) {
+        home = new Home(driver);
+    }
+
+    public void setLocation(String location) {
         home.open();
         home.getSearchInputElement();
         home.fillInSearchForm(location);
-        return home.clickOnSearchResult();
-    }
-
-    public void close() {
-        home.close();
+        home.clickOnSearchResult();
     }
 }

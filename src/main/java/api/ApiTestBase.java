@@ -3,14 +3,13 @@ package api;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
-
 import java.io.IOException;
 import java.util.Properties;
 
-public class TestBase {
-    public RequestSpecification REQUEST;
+public class ApiTestBase {
+    protected RequestSpecification REQUEST;
 
-    public TestBase() {
+    public ApiTestBase() {
         try {
             Properties props = new Properties();
             props.load(getClass().getClassLoader().getResourceAsStream("config.properties"));

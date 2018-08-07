@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import static org.hamcrest.Matchers.*;
 
-public class WeatherTest extends TestBase {
+public class WeatherTest extends ApiTestBase {
 
     @Test
     public void verifyGetWeatherByCityName() {

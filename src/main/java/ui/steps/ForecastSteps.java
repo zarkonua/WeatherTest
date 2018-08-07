@@ -1,20 +1,17 @@
 package ui.steps;
 
+import org.openqa.selenium.WebDriver;
 import ui.pages.Forecast;
-import ui.pages.Home;
 
 public class ForecastSteps {
 
-    private static Home home = new Home();
+    private Forecast forecast;
 
-    public Forecast setLocation(String location) {
-        home.open();
-        home.getSearchInputElement();
-        home.fillInSearchForm(location);
-        return home.clickOnSearchResult();
+    public ForecastSteps(WebDriver driver) {
+        forecast = new Forecast(driver);
     }
 
-    public void close() {
-        home.close();
+    public String getTemperature() {
+        return forecast.getTemperatureElement().getText();
     }
 }
